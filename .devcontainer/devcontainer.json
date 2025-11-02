@@ -1,0 +1,25 @@
+{
+  "name": "Kanban Vote App",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "20"
+    },
+    "ghcr.io/devcontainers/features/azure-cli:1": {}
+  },
+  "postCreateCommand": "npm --version && node --version && az version",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "ms-azuretools.vscode-azureappservice"
+      ]
+    }
+  },
+  "forwardPorts": [4000],
+  "portsAttributes": {
+    "4000": { "label": "Backend API", "onAutoForward": "openBrowser" }
+  },
+  "remoteUser": "vscode"
+}
